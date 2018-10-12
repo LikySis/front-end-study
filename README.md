@@ -3,14 +3,14 @@
 
 这是段落
 
--html
--css
--javascript
+- html
+- css
+- javascript
 
-'''
+```
 var a = 1
 var b = 2
-'''
+```
 
 [bilibili](https://www.bilibili.com/account/dynamic)
 
