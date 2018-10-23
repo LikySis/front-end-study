@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>我的导航</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header></header>
+	<main class="cls">
+		<div id="ma"></div>
+	</main>
+	<footer></footer>
+
+	<script>
+
+
+
+		// 1. 初始化数据
+		// localStorage.setItem('xxx',JSON.stringify(hash));  //手动改变hash内容时，用这个把代码里的hash导入到浏览器
+
+		var Data = initData();
+		var keys = Data["keys"];
+		var hash = Data["hash"];
+
+
+
+		// 2. 生成键盘结构, 为元素绑定事件
+		generateKeyboard(keys, hash);
+
+
+
+		// 3.监听键盘
+		listenToUser(hash);
+
+		//将代码变为树状结构，方便理解（不封装函数就是线性的）
+
+
+
+
+		/* ------------------------------------------------------------ */
+		function initData() { // 生成存键盘和网址的数据
+			var keys = {
+				'0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+				'1': ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+				'2': ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+				length: 3
+			};
+			var hash = {
+				q: 'bilibili.com', w: '163.com', e: 'ele.me',
+				r: '1688.com', t: '1688.com', y: '1688.com', u: '1688.com', i: '1688.com', o: '1688.com', p: '1688.com', a: '1688.com',
+				s: 'zhihu.com', d: '1688.com', f: '1688.com', g: '1688.com', h: '1688.com', j: '1688.com', k: '1688.com', l: '1688.com', z: '1688.com', x: '1688.com',
+				c: '1688.com', v: '1688.com', b: '1688.com', n: '1688.com', m: '1688.com'
+
+			};
+
+			var hashInLocal = getLocalHash('zzz');
+
+			if (hashInLocal) {
+				hash = hashInLocal;
+			}
+			return {
+				"keys": keys, "hash": hash
+			}
+		}
+
+
+		function generateKeyboard(keys, hash) {  //生成键盘结构，绑定元素事件
+			for (var i = 0; i < keys.length; i++) {
+
+				var div_ = document.createElement('div');  // 一共要三个div 装三排键盘 ，每次生成一个div，然后
+				// 装进main ，再把一排的键盘装满
+				ma.appendChild(div_);
+
+				var keys_arr = keys[String(i)];
+
+				for (var j = 0; j < keys_arr.length; j++) {
+
+					var span = createSpan(keys_arr[j]); //传入字母内容，生成span
+
+					var button = creatButton(keys_arr[j]); //传入字母内容，生成编辑按钮
+
+					var imgIcon = creatImageIcon(keys_arr[j]); //传入字母内容，生成字母对应的网站的图标
+
+					var kbd = document.createElement('kbd');  // 创建kbd，将kbd里面需要的元素都装进去----kbd的代码
+					kbd.appendChild(span);
+					kbd.appendChild(button);
+					kbd.appendChild(imgIcon);
+
+					div_.appendChild(kbd);  // 每个kbd创建完就装入当前的div
+				}
+			}
+
+
+		}
+
+
+		function listenToUser(hash) {  // 根据键盘输入，打开对应的网站
+			document.onkeypress = function (Press) { //如果按得键盘不是已经存好的？？
+				kbd = Press['key'];
+				console.log(kbd);
+				website = hash[kbd];
+				console.log(website);
+				/* location.href = "http://"+ website; */ //在当前页面打开
+				window.open('http://' + website, '_blank');
+			}
+		}
+
+
+
+		function getLocalHash(name) {  // 取出浏览器里的hash地址数据
+			return JSON.parse(localStorage.getItem('xxx') || 'null')
+			//把网址信息存在浏览器里面， 哈希表修改后就被存起来，刷新，重启浏览器后都不被改变
+		}
+
+
+		function createSpan(spanContent) {
+			var spans = document.createElement('span'); //创建装字母的span---span的代码
+			spans.textContent = spanContent;
+			return spans
+		}
+
+
+		function creatButton(buttonId) {
+			var bot = document.createElement('button');// 创建edit的button---button的代码
+			bot.textContent = 'edit';
+			bot.id = buttonId;
+			bot.onclick = function (Click) {
+				//Click.target 这就是当前被点击的对象
+				// console.log(Click.target);
+				var k = this.id;
+				var imgIcon2 = this.nextSibling; //实现新网址编辑完成就生成新图标的功能
+				var inputs = prompt("请设置网址：");
+				hash[k] = inputs;
+
+				/* console.log(inputs);
+				console.log(this.id); */
+				imgIcon2.src = 'http://' + inputs + '/favicon.ico';
+
+				imgIcon2.onerror = function (xxx) { //这个需要时间，有延迟
+					xxx.target.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png';
+					console.log(this.id);
+				}
+
+				localStorage.setItem('xxx', JSON.stringify(hash)); // hash被改变就更新
+			}
+			return bot
+
+		}
+
+
+		function creatImageIcon(kbdWord) {
+			var imgIcon = document.createElement('img'); // 创建imgIcon网站小图标---image的代码
+			imgIcon.id = kbdWord;
+			if (hash[kbdWord]) {
+				imgIcon.src = 'http://' + hash[kbdWord] + '/favicon.ico';
+			} else {
+				imgIcon.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png';
+			}
+			imgIcon.onerror = function () { //这个需要时间，有延迟
+				this.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png';
+				console.log(this.id);
+			}
+			return imgIcon
+		}
+
+
+
+
+
+
+	</script>
+
+
+
+</body>
+
+</html>
