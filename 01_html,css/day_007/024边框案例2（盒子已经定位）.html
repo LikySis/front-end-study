@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		width: 250px;
+		height: 400px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: -1px;
+		position: relative;    /*已经定位*/
+		/*z-index: 0;*/
+	}
+	div:hover {
+		border: 1px solid #f40;
+		z-index: 1;   /*此时把次序提高即可*/
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div, red, green {
+		float: left;  /*有了浮动，块级元素会排成一行 , 但只能左对齐，右对齐*/
+	}
+
+	div.blue {
+		float: right;
+	}
+
+	.red {
+		width: 300px;
+		height: 200px;
+		background-color: red;
+	}
+	.green {
+		width: 300px;
+		height: 200px;
+		background-color: green;
+		
+	}
+	.blue {
+		width: 300px;
+		height: 200px;
+		background-color: blue;
+	}
+	</style>
+</head>
+
+<!-- 布局时注意用父盒子占据位置 -->
+<body>
+	<div class="red"></div>
+	<div class="green"></div>
+	<div class="blue"></div>
+</body>
+</html>

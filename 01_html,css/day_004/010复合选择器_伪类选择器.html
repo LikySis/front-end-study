@@ -1,0 +1,34 @@
+<html>
+   <head>
+		<title>链接伪类选择器</title> <!-- 鼠标是否接触到链接的不同状态 -->
+		<style>
+
+      /*这四个顺序不能变*/
+         a:link{  /*未访问时的样子*/
+            color: red;
+            font-size: 30px;
+            text-decoration: none;
+
+         }
+
+          a:visited{  /*鼠标已经点过的样子*/
+            color: orange;
+         }
+
+         a:hover{ /*鼠标经过时的样子*/
+            color: #00ff00;
+
+         }
+         a:active{   /*鼠标按下时的样子*/
+            color: #0000ff;
+         }
+
+        
+
+		</style>
+
+   </head>
+   <body>
+      <a href="http://www.bilibili.com">b站</a>
+   </body>
+</html>

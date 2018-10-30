@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		text-align: center; /*可以让盒子里的内容（文字 行内元素 行内块元素）居中对齐*/
+		width: 300px;
+		height: 100px;
+		background-color: pink;
+		 /* margin: 0 auto; 通俗写法 0 auto  上下是 0  左右是auto    水平居中对齐 */
+		 /*auto可以理解为充满的意思*/
+
+		 /* 
+		 margin-left: auto;
+		 margin-right: auto; 左右都自动充满，只能居中对齐*/
+
+		 /* margin: auto; 上下左右  
+		  ，  都是auto*/    /*上下有东西,充满的话就相当于外边距为0？*/
+		 margin: auto;
+
+		/* margin: 100px auto;*/
+
+	}
+	/*可以让一个盒子实现水平居中，需要满足两个条件：
+
+	1. 必须是块级元素。     
+	2. 盒子必须指定了宽度（width）
+*/
+	</style>
+</head>
+<body>
+	<div>
+		对齐
+	</div>
+</body>
+</html>

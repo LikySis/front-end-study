@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		/*width: 200px;
+		height: 200px;*/
+		width: 160px;
+		height: 160px;
+		border: 1px solid red;
+		padding: 20px;
+		/* w3c标准的盒模型 */
+		/*非常严重的问题： padding 会撑开 带有 widht 和height盒子*/
+		/*在内容充满200*200的盒子时，为保证还有内边距存在，只能把盒子撑大*/
+
+		/*	1. 我们要求这个 div 就是标准的 200 * 200   
+			2. 但是我们给了padding就撑开盒子了  240 
+			3. 问我们怎样能保证盒子 不超过 200 * 200 */
+		/*这需要计算一下，然后将原有的盒子设定小一些*/
+		
+	}
+	
+        
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

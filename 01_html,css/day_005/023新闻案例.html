@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">  /*熟练掌握这个*/
+		* {
+			margin: 0;
+			padding: 0;  /*清除内外边距 , 不同浏览器默认的值不一样 ，开始清除一遍方便统一*/
+		}
+		.article {
+			width: 380px;
+			height: 263px;
+			border: 1px solid #ccc;
+			padding: 20px 15px 0;    /*上  左右  下*/
+			margin: 100px;  /*4方的外边距都是100*/
+		}
+		.article h1 {
+			font-size: 20px;
+			color: #202026;
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 6px;
+		}
+		.article li {
+			list-style: none;   /*取消li 前面的小点*/
+			border-bottom: 1px dashed #ccc;
+			height: 40px;
+			line-height: 40px;
+			text-indent: 1em;
+		}
+		.article a {
+			color: #333;
+			font-size: 13px;
+			text-decoration: none;
+		}
+		.article a:hover {
+		text-decoration: underline;  /*添加下划线*/
+		}
+		body {
+			background-color: #eee;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="article">
+		<h1>最新文章/New Articles</h1>
+		<ul>
+			<li><a href="#">北京招聘网页设计，平面设计，php</a></li>
+			<li><a href="#">体验javascript的魅力</a></li>
+			<li><a href="#">jquery世界来临</a></li>
+			<li><a href="#">网页设计师的梦想</a></li>
+			<li><a href="#">jquery中的链式编程是什么</a></li>
+		</ul>
+	</div>
+</body>
+</html>
