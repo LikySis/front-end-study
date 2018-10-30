@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		border: 1px solid red;
+		display: inline-block;
+		border-radius: 10px;
+	}   /*!!!!!!!!!!!!!!!!*/
+	a {
+		height: 33px;
+		display: inline-block;
+		background: url(images/to.png) no-repeat;
+		color: #fff;
+		text-decoration: none;
+		line-height: 33px;
+		padding-left: 15px;
+	}
+	span {
+		display: inline-block;
+		height: 33px;
+		background: url(images/to.png) no-repeat right;
+		/* 这个背景在右边盖住了上面的 */
+
+		padding-right: 15px;
+	}
+	</style>
+</head>
+<body>
+	<!-- a+span 必须 -->
+	<div>
+		<a href="#">
+		<span>首页</span>
+		</a>
+	</div>
+</body>
+</html>

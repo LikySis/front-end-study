@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	body {
+		height: 2000px;  /*页面有高度，有滚动条*/
+	}
+
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+
+	}
+	.top {
+		position: absolute;  /*1.不占位置 跟浮动一样 ，下面的盒子会上来*/
+		right: 0;
+		bottom: 0;			/*2.以当前页面为基准点对齐*/
+
+	}
+	.bottom {
+		background-color: purple;
+		width: 110px;
+	}
+	</style>
+</head>
+<body>
+	<div class="top"></div>
+	<div class="bottom"></div>
+</body>
+</html>

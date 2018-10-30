@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		width: 250px;
+		height: 400px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: -1px;   
+/*		本来盒子的间隔框像素叠加了，是2，但是加了margin-left: -1px;，第一个盒子左移1像素，然后由于float，第二个盒子紧贴着第一个盒子，
+		一起移动，又因为margin-left: -1px;，第二个盒子再左移动1像素....,最后
+		盒子的间隔框像素变为1*/
+	}
+	div:hover {
+		border: 1px solid #f40;
+		position: relative; 
+		/*不加定位，鼠标放上去，边框不全，因为被右边的盖住了*/
+		/*相对定位比标准流高一级 浮在上面，所以边框都出来了*/
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

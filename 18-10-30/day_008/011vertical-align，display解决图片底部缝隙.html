@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	img {
+		vertical-align: baseline; /*默认的图片会和文字基线对齐 ，造成底部的空隙*/
+
+		/*以下都可以解决：*/
+		/*vertical-align : top;*/  /*图片与文字顶部对齐*/
+		
+		/*vertical-align: middle;*/   /*图片与文字中部对齐*/
+
+		/*vertical-align: bottom;*/    /*图片与文字底线对齐*/
+
+		/*给img 添加 display：block; 转换为块级元素 也可以解决*/
+	}
+	div {
+		border: 2px solid red;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="images/tudou.jpg" height="252" width="448" alt=""> 
+		my name is
+	</div>
+</body>
+</html>
