@@ -1,6 +1,0 @@
-@charset "utf-8";  /*在css外部样式表文件内使用。指定该样式表使用的字符编码。*/
-@import url(style1.css);
-div{
-	color: red;
-	font-size: 25px;
-}
