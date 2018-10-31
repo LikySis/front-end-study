@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var num_front = 1;//第一
+    var num_later = 1;//第二
+    var sum = 0;
+    //i=3是从第三个开始
+    for (var i = 3; i <= 12; i++) {
+        sum = num_front + num_later;
+        num_front = num_later;
+        num_later = sum;
+    }
+    console.log(sum);
+    //求斐波那契数列数列第12个的值
+
+</script>
+
+</body>
+</html>
