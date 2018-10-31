@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div::before {
+            content: '<';
+            /* 默认不出现，用content才会出现 */
+        }
+
+        div::after {
+            content: '>';
+            /* 选中不了 */
+        }
+
+        .asd {
+            border: 1px solid red;
+            width: 300px;
+            height: 500px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+        }
+    </style>
+    <script>
+    /* 
+    所有非空标签都有伪类  非空标签（由两半的）
+    
+
+    
+    
+     */
+    </script>
+</head>
+
+<body>
+    <div class="asd"></div>
+    <div>123</div>
+    <div>456</div>
+</body>
+
+</html>
