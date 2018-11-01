@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <script>
+
+
+        //    var num1 = 10;
+        //    var num2 = num1;
+        //    num1 = 20;
+        //    console.log(num1);//20
+        //    console.log(num2);//10
+
+
+        //    var num = 50;
+        //    function f1(num) {
+        //      num = 60;
+        //      console.log(num);//60
+        //    }
+        //    f1(num);
+        //    console.log(num);//50
+
+        //
+        //    var num1 = 55;
+        //    var num2 = 66;
+        //    function f1(num, num1) {
+        //      num = 100;
+        //      num1 = 100;
+        //      num2 = 100; // 没有声明，隐式全局变量
+        //      console.log(num);//100
+        //      console.log(num1);//100
+        //      console.log(num2);//100
+        //    }
+        //    f1(num1, num2);
+
+        //    console.log(num1);//55
+        //    console.log(num2);//100
+        //    console.log(num);// 报错
+
+
+
+
+        function Person(name,age,salary) {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+        }
+        function f1(person) {  //传入p时，person也开辟了一块空间
+            // , 存的也是p的地址， 但是person = new Person时，person的地址
+            //改变了（指向改变了），但是p依旧指向传入之前的堆区域
+            person.name = "ls";
+            person = new Person("aa",18,10);
+        }
+
+        var p = new Person("zs",18,1000);
+        console.log(p.name);  // zs
+        f1(p);
+        console.log(p.name); // ls
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

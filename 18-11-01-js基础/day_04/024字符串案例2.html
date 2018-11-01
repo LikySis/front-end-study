@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //输出截取的字符串
+        var str = "今天天气真好。。";
+        var key = "真好";
+        //先获取要截取的字符串的索引的位置
+        var index = str.indexOf(key);
+        //从指定的位置开始截取,截取两个即可
+        str = str.substr(index, key.length);
+        console.log(str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

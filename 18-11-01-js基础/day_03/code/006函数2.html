@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+            console.log("xasxhxu");  //这里的 console.log 在下面给result赋值的时候调用了？？？
+            return 50;
+        }
+        var result = f1();  // 只要有f1() 在，就会调用(其内部的console就会输出？？)
+        console.log(typeof(result));
+
+
+
+
+        function f2() {
+            console.log("考尼奇瓦");
+            return 100;
+        }
+        console.log(f2);//输出的f1函数名字-----是f2函数的代码！！！
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

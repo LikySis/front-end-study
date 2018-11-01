@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <script>
+        // 以下一共有 0 1 2 3 四个等级的作用域，
+        // 对应三个函数和一个全局作用域，当某个函数
+        // 需要num时，先在自己的作用域找，找不到就去上一级，
+        // 这就形成了作用域链
+        var num=10;
+        function f1() {
+            var num=20;
+            function f2() {
+                var num=30;
+                function f3() {
+                    var num=50;
+                    console.log(num);
+                }
+                f3();
+            }
+            f2();
+        }
+        f1();
+
+
+    // 定义f1 执行f1 ---> 执行f1时 又定义f2 执行f2--->  执行f2时 又定义f3 执行f3-->console.log(num);
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

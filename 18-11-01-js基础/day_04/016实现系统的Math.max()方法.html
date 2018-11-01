@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function MyGetMax() {
+            this.getMax = function () {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (max < arguments[i]) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            }
+        }
+
+        var mt = new MyGetMax();
+
+        console.log(mt.getMax(1, 5, 8, 9, 7, 25, 5, 4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

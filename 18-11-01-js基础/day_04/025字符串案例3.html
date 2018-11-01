@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //找出字符串里每个字符出现的次数
+        var str = "xxkxkofjakijsuihdndansddjufbbdkodkjbcmkiso";
+
+        var data = {};
+
+        for (var i = 0; i < str.length - 1; i++) {
+            if (!data[str[i]]) {
+                // 如果不在
+                var temp = str[i];
+                data[temp] = 1;
+            }
+            else {
+                data[str[i]] ++;
+            }
+        }
+        for (var key in data) {
+            console.log(key + "==========>" + data[key]);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

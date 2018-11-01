@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <script>
+
+        //var arr=[10,2,3,4,1];
+        //长度:5
+        //索引:0-4
+        //console.log(arr);
+        //alert(arr);
+
+        //数组中存储的数据类型一定是一样的吗? 类型可以不一样
+        //    var arr=[10,"哈哈",true,null,undefined,new Object()];
+        //    console.log(arr);
+        //数组的长度是不是可以改变呢?
+        // var arr=[];
+        // //通过索引来设置数组中的元素的值
+        // arr[0]=10;
+        // arr[1]=20;
+        // console.log(arr.length);
+        // //获取元素的值,通过索引的方式
+        // console.log(arr[2]);
+
+        // 案例7: ，把其他的数据放在一个新的数组中
+
+           var arr = [10, 0, 20, 0, 30, 0, 50];
+           var newArr=[];//新数组,用来存放第一个数组中所有非0的数字
+           for(var i=0;i<arr.length;i++){
+             if(arr[i]!=0){
+               newArr[newArr.length]=arr[i];
+             }
+           }
+           //把新数组的长度作为下标使用,数组的长度是可以改变的
+           console.log(newArr);
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
