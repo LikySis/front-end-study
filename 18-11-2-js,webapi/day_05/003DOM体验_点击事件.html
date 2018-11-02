@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <script>
+        // onclick : 点击操作，是事件
+        // 有：事件源（按钮） ， 点击（事件名字），被点（触发），弹框（响应）
+    </script>
+</head>
+<body>
+<!--html代码-->
+<input type="button" value="弹框" onclick="alert('哈哈,我又变帅了')"/>
+
+
+<input type="button" value="000" id="bt"/>
+
+<script>
+    // js 与html分离
+    //DOM:文档对象模型,操作页面元素的
+    document.getElementById("bt").onclick = function(){
+        alert("呵呵。。");
+    };
+</script>
+</body>
+</html>

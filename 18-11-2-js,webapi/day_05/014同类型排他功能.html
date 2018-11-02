@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="没怀孕" color=""/>
+<input type="button" value="没怀孕" color=""/>
+<input type="button" value="没怀孕" color=""/>
+<input type="button" value="没怀孕" color=""/>
+<input type="button" value="没怀孕" color=""/>
+<input type="button" value="没怀孕" color=""/>
+<script>
+
+    //获取所有的按钮,分别注册点击事件
+    // 先全部改变，再改变指定的
+
+    var btnObjs = document.getElementsByTagName("input");
+    //循环遍历所有的按钮
+    for (var i = 0; i < btnObjs.length; i++) {
+        //为每个按钮都要注册点击事件
+        btnObjs[i].onclick = function () {
+            //把所有的按钮的value值设置为默认的值:没怀孕
+            for (var j = 0; j < btnObjs.length; j++) {
+                btnObjs[j].value = "没怀孕";
+                btnObjs[j].color = "write";
+            }
+            //当前被点击的按钮设置为:怀孕了
+            this.value = "怀孕了";
+            this.color = "pink";
+            // btnObjs[i].value = "怀孕了"; 里的i是for执行后的6
+            // 与btnObjs[i].onclick = function () 里的i没关系
+            // 执行点击事件时应该 单独用this
+        };
+
+    }
+    // for循环是在页面加载的时候,执行完毕了，但是在遇到onclick时
+    // 停止，只是设置onclick 相应的点击事件
+
+
+    //点击事件是在触发的时候,执行的，此时应该单独进行
+</script>
+</body>
+</html>
