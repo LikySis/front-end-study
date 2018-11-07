@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<script src="common.js"></script>
+<script src="programmer1.js"></script>
+<script src="programmer2.js"></script>
+<script>
+
+    //当一个元素被绑定多个事件（可以相同，可以不同）时，会产生覆盖
+    // 目标是 让这些事件都被执行
+
+    my$("btn").onclick=function () {
+        console.log("小杨好帅哦");
+    };
+</script>
+</body>
+</html>

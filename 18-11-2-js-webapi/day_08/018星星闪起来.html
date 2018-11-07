@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="common.js"></script>
+    <style>
+        #box {
+            width: 600px;
+            height: 600px;
+            background-color: black;
+            position: relative;
+        }
+
+        span {
+            color: yellow;
+            position: absolute;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn1" value="闪起来">
+<input type="button" id="btn2" value="停下来">
+<div id="box"></div>
+
+<script>
+    var timeId;
+    btn1.onclick = function () {
+        timeId = setInterval(function () {
+            // my("box").innerHTML = "<span>⭐</span>"
+            box.innerHTML = "<span>★</span>"
+            // var x = parseInt(Math.random() * 600 + 1)
+            // var y = parseInt(Math.random() * 600 + 1)
+
+            var x = parseInt(Math.random() * 599 + 1)
+            var y = parseInt(Math.random() * 599 + 1)
+
+            // var span_arr = document.getElementsByTagName("sapn")
+            // for (var i = 0; i < span_arr.length; i++) {
+            //     span_arr[i].style.left = x + "px"
+            //     span_arr[i].style.top = y + "px"
+            // }
+
+            my$("box").firstElementChild.style.left = x + "px"
+            my$("box").firstElementChild.style.top = y + "px"
+        }, 1);
+    };
+
+    btn2.onclick = function () {
+        window.clearInterval(timeId);
+    };
+</script>
+</body>
+</html>
